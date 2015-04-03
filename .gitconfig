@@ -1,0 +1,7 @@
+[user]
+	name = Brian Pomerantz
+	email = bbp114@psu.edu
+[push]
+	default = simple
+[core]
+	editor = vim
