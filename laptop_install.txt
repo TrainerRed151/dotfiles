@@ -25,4 +25,10 @@ sudo pacman -S flashplugin
 sudo pacman -S mplayer
 sudo pacman -S xev
 sudo pacman -S xorg-xev
-sudo pacman -S xf86-input-synaptics
+sudo pacman -S xf86-input-synaptics //not good, use below libinput
+
+sudo pacman -S xf86-input-libinput 
+sudo pacman -S xorg-xinput 
+sudo libinput-list-devices 
+xinput list-props 12
+xinput set-prop 12 274 1
