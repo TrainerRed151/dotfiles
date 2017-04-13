@@ -18,11 +18,11 @@ if [ -d "$HOME/bin" ] ; then
 fi
 
 
-time=$(cat /proc/uptime | awk '{print $1;}')
+#time=$(cat /proc/uptime | awk '{print $1;}')
 
-if [ ${#time} -le 4 ] && [ ${time:0:1} == "1"]
-then
-    startx
-else
+#if [ ${#time} -le 4 ] && [ ${time:0:1} == "1"]
+#then
+#    startx
+#else
     screenfetch -E -t
-fi
+#fi
