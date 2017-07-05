@@ -21,5 +21,9 @@ if [ -d "$HOME/lib" ] ; then
     export LD_LIBRARY_PATH
 fi
 
+if [-z "$SSH_AGENT_SOCK" ]; then
+    eval `ssh-agent`
+    ssh-add
+fi
 
 screenfetch -E -t
