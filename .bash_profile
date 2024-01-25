@@ -26,4 +26,4 @@ if [ -z "$SSH_AGENT_SOCK" ]; then
     ssh-add
 fi
 
-screenfetch -E -t
+neofetch --color_blocks off

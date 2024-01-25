@@ -23,4 +23,4 @@ if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
 
-screenfetch -E -t
+neofetch --color_blocks off
