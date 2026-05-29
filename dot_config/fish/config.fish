@@ -18,6 +18,10 @@ set -g fish_color_escape normal
 set -g fish_color_end normal
 set -g fish_color_redirection normal
 set -g fish_color_autosuggestion normal
+set -g fish_color_search_match
+
+# Disable path underlining
+set fish_color_valid_path
 
 # PATH
 fish_add_path $HOME/bin
@@ -25,14 +29,4 @@ fish_add_path $HOME/.local/bin
 
 set -gx EDITOR nvim
 
-# pyenv
-set -gx PYENV_ROOT $HOME/.pyenv
-fish_add_path $PYENV_ROOT/bin
-
-if command -q pyenv
-    pyenv init - fish | source
-    pyenv virtualenv-init - | source
-end
-
 fastfetch
-~/.local/bin/mise activate fish | source
