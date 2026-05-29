@@ -1,0 +1,68 @@
+Include /Users/brian/.colima/ssh_config
+
+Host leary-web
+    Hostname learypost.ddns.net
+    User brian
+    IdentityFile ~/.ssh/leary
+
+Host leary
+    Hostname 192.168.1.196
+    User brian
+    IdentityFile ~/.ssh/leary
+
+Host pihole
+    Hostname 192.168.1.196
+    User pi
+
+Host github.com
+    HostName github.com
+    User git
+    PreferredAuthentications publickey
+    IdentityFile ~/.ssh/trainerred151
+    IdentitiesOnly yes
+
+Host son.github.com
+    HostName github.com
+    User git
+    PreferredAuthentications publickey
+    IdentityFile ~/.ssh/speakoutnews
+    IdentitiesOnly yes
+
+Host firm.github.com
+    HostName github.com
+    User git
+    PreferredAuthentications publickey
+    IdentityFile ~/.ssh/firm
+    IdentitiesOnly yes
+
+Host work
+    Hostname 192.168.1.86
+    User brianpomerantz
+    IdentityFile ~/.ssh/id_rsa
+
+Host ajax
+    Hostname 192.168.1.162
+    User brian
+    IdentityFile ~/.ssh/id_rsa
+
+Host ajax-web
+    Hostname learypost.ddns.net
+    Port 2222
+    User brian
+    IdentityFile ~/.ssh/id_rsa
+
+Host firm
+    Hostname 3.138.211.231
+    User ubuntu
+    IdentityFile ~/firm/website/firm.pem
+
+Host hermes
+    Hostname 192.168.1.52
+    User brian
+    IdentityFile ~/.ssh/id_rsa
+
+Host boot-hermes
+    Hostname 192.168.1.52
+    User root
+    Port 2231
+    IdentityFile ~/.ssh/id_rsa

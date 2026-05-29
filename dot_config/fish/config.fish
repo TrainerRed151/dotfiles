@@ -34,4 +34,5 @@ if command -q pyenv
     pyenv virtualenv-init - | source
 end
 
-neofetch --color_blocks off
+fastfetch
+~/.local/bin/mise activate fish | source
