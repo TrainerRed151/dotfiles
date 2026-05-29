@@ -2,6 +2,10 @@ if not status is-interactive
     return
 end
 
+if status --is-login
+  eval (/opt/homebrew/bin/brew shellenv)
+end
+
 set -g fish_greeting ''
 
 # Disable autosuggestions
