@@ -1,6 +1,6 @@
 # vim:fileencoding=utf-8:foldmethod=marker
 
-#: Fonts {{{
+#: Fonts {{ "{{" }}{
 
 #: kitty has very powerful font management. You can configure
 #: individual font faces and even specify special fonts for particular
@@ -239,7 +239,7 @@ font_size 18.0
 
 #: }}}
 
-#: Text cursor customization {{{
+#: Text cursor customization {{ "{{" }}{
 
 # cursor #cccccc
 
@@ -311,7 +311,7 @@ shell_integration no-cursor
 
 #: }}}
 
-#: Scrollback {{{
+#: Scrollback {{ "{{" }}{
 
 scrollback_lines 100000
 
@@ -388,7 +388,7 @@ scrollback_lines 100000
 
 #: }}}
 
-#: Mouse {{{
+#: Mouse {{ "{{" }}{
 
 # mouse_hide_wait 3.0
 
@@ -452,7 +452,7 @@ scrollback_lines 100000
 #: value to/from always will only affect text subsequently received by
 #: kitty.
 
-copy_on_select yes
+copy_on_select {{ if eq .chezmoi.os "darwin" }}yes{{ else }}clipboard{{ end }}
 
 #: Copy to clipboard or a private buffer on select. With this set to
 #: clipboard, selecting text with the mouse will cause the text to be
@@ -542,7 +542,7 @@ copy_on_select yes
 
 #: The default shape of the mouse pointer when dragging across text.
 
-#: Mouse actions {{{
+#: Mouse actions {{ "{{" }}{
 
 #: Mouse buttons can be mapped to perform arbitrary actions. The
 #: syntax is:
@@ -702,7 +702,7 @@ copy_on_select yes
 
 #: }}}
 
-#: Performance tuning {{{
+#: Performance tuning {{ "{{" }}{
 
 # repaint_delay 10
 
@@ -734,7 +734,7 @@ copy_on_select yes
 
 #: }}}
 
-#: Terminal bell {{{
+#: Terminal bell {{ "{{" }}{
 
 enable_audio_bell no
 
@@ -811,7 +811,7 @@ enable_audio_bell no
 
 #: }}}
 
-#: Window layout {{{
+#: Window layout {{ "{{" }}{
 
 # remember_window_size  yes
 # initial_window_width  640
@@ -1008,7 +1008,7 @@ enable_audio_bell no
 
 #: }}}
 
-#: Tab bar {{{
+#: Tab bar {{ "{{" }}{
 
 # tab_bar_edge bottom
 
@@ -1173,7 +1173,7 @@ enable_audio_bell no
 
 #: }}}
 
-#: Color scheme {{{
+#: Color scheme {{ "{{" }}{
 
 # foreground #dddddd
 # background #000000
@@ -1283,7 +1283,7 @@ enable_audio_bell no
 #: to be used unchanged. Note that these colors can be overridden by
 #: the program running in the terminal.
 
-#: The color table {{{
+#: The color table {{ "{{" }}{
 
 #: The 256 terminal colors. There are 8 basic colors, each color has a
 #: dull and bright version, for the first 16 colors. You can set the
@@ -1357,7 +1357,7 @@ enable_audio_bell no
 
 #: }}}
 
-#: Advanced {{{
+#: Advanced {{ "{{" }}{
 
 # shell .
 
@@ -1741,7 +1741,7 @@ enable_audio_bell no
 
 #: }}}
 
-#: OS specific tweaks {{{
+#: OS specific tweaks {{ "{{" }}{
 
 # wayland_titlebar_color system
 
@@ -1865,7 +1865,7 @@ macos_colorspace displayp3
 
 #: }}}
 
-#: Keyboard shortcuts {{{
+#: Keyboard shortcuts {{ "{{" }}{
 
 #: Keys are identified simply by their lowercase Unicode characters.
 #: For example: a for the A key, [ for the left square bracket key,
@@ -1931,7 +1931,7 @@ macos_colorspace displayp3
 #: cause all invocations of the hints kitten to have the --hints-
 #: offset=0 option applied.
 
-#: Clipboard {{{
+#: Clipboard {{ "{{" }}{
 
 #: Copy to clipboard
 
@@ -1973,7 +1973,7 @@ macos_colorspace displayp3
 
 #: }}}
 
-#: Scrolling {{{
+#: Scrolling {{ "{{" }}{
 
 #: Scroll line up
 
@@ -2065,7 +2065,7 @@ macos_colorspace displayp3
 
 #: }}}
 
-#: Window management {{{
+#: Window management {{ "{{" }}{
 
 #: New window
 
@@ -2204,7 +2204,7 @@ macos_colorspace displayp3
 
 #: }}}
 
-#: Tab management {{{
+#: Tab management {{ "{{" }}{
 
 #: Next tab
 
@@ -2261,7 +2261,7 @@ macos_colorspace displayp3
 #:     map ctrl+t new_tab !neighbor [optional cmd to run]
 #: }}}
 
-#: Layout management {{{
+#: Layout management {{ "{{" }}{
 
 #: Next layout
 
@@ -2285,7 +2285,7 @@ macos_colorspace displayp3
 #:     map ctrl+alt+z toggle_layout stack
 #: }}}
 
-#: Font sizes {{{
+#: Font sizes {{ "{{" }}{
 
 #: You can change the font size for all top-level kitty OS windows at
 #: a time or only the current one.
@@ -2322,7 +2322,7 @@ macos_colorspace displayp3
 #:     map kitty_mod+f6 change_font_size current 10.0
 #: }}}
 
-#: Select and act on visible text {{{
+#: Select and act on visible text {{ "{{" }}{
 
 #: Use the hints kitten to select text and either pass it to an
 #: external program or insert it into the terminal or copy it to the
@@ -2390,7 +2390,7 @@ macos_colorspace displayp3
 #: <https://sw.kovidgoyal.net/kitty/kittens/hints/>.
 #: }}}
 
-#: Miscellaneous {{{
+#: Miscellaneous {{ "{{" }}{
 
 #: Show documentation
 

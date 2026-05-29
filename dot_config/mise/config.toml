@@ -1,3 +1,5 @@
 [tools]
 chezmoi = "2.70.4"
+claude-code = "2.1.156"
 fastfetch = "2.63.1"
+python = "3.13.6"

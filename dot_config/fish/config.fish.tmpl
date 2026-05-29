@@ -3,7 +3,12 @@ if not status is-interactive
 end
 
 if status --is-login
+{{ if eq .chezmoi.os "darwin" -}}
   eval (/opt/homebrew/bin/brew shellenv)
+{{ else if eq .chezmoi.os "linux" -}}
+  ~/.local/bin/mise activate fish | source
+{{- end }}
+  fastfetch
 end
 
 set -g fish_greeting ''
@@ -32,5 +37,3 @@ fish_add_path $HOME/bin
 fish_add_path $HOME/.local/bin
 
 set -gx EDITOR nvim
-
-fastfetch

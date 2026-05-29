@@ -1,3 +1,4 @@
+{{ if eq .machineType "personal" -}}
 Include /Users/brian/.colima/ssh_config
 
 Host leary-web
@@ -25,7 +26,7 @@ Host son.github.com
     HostName github.com
     User git
     PreferredAuthentications publickey
-    IdentityFile ~/.ssh/speakoutnews
+    IdentityFile ~/.ssh/son
     IdentitiesOnly yes
 
 Host firm.github.com
@@ -66,3 +67,45 @@ Host boot-hermes
     User root
     Port 2231
     IdentityFile ~/.ssh/id_rsa
+{{ end -}}
+{{ if eq .machineType "work" -}}
+# DevPod Start maize-eba.devpod
+Host maize-eba.devpod
+  ForwardAgent yes
+  LogLevel error
+  StrictHostKeyChecking no
+  UserKnownHostsFile /dev/null
+  HostKeyAlgorithms rsa-sha2-256,rsa-sha2-512,ssh-rsa
+  ProxyCommand "/usr/local/bin/devpod" ssh --stdio --context default --user vscode maize-eba
+  User vscode
+# DevPod End maize-eba.devpod
+
+Host github.com
+    HostName github.com
+    User git
+    PreferredAuthentications publickey
+    IdentityFile ~/.ssh/id_rsa
+    IdentitiesOnly yes
+
+Host ai-jumpbox-proxy
+  HostName 3.14.63.94
+  User brian
+  IdentityFile ~/.ssh/id_rsa
+
+Host ai-jumpbox-proxy-prod
+  HostName 3.22.35.100
+  User brian
+  IdentityFile ~/.ssh/id_rsa
+
+Host ai-jumpbox-proxy-2
+  HostName 3.14.63.94
+  User brian
+  DynamicForward 1080  # -D 1080
+  SessionType none  # -N
+  LogLevel QUIET  # best guess at -q
+  IdentityFile ~/.ssh/id_rsa
+
+Host camc
+    Hostname brian.pomerantz#i-bvmfdJLdHK9@pam.imprivata.com
+    Port 2022
+{{ end -}}

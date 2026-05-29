@@ -1,5 +1,8 @@
 {
   "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/master/doc/json_schema.json",
+{{- if eq (index .chezmoi.osRelease "id") "ubuntu" }}
+  "logo": { "source": "ubuntu_old2" },
+{{- end }}
   "modules": [
     "title",
     "separator",
