@@ -1,0 +1,41 @@
+pane	8	1	1	:*	1	artemis.local	:/Users/brian	1	bash	:
+pane	Code	1	0	:	1	artemis.local	:/Users/brian/Code/proof_of_work	1	bash	:
+pane	Code	2	0	:-	1	artemis.local	:/Users/brian/Code/GobbletAI/cpp	1	bash	:
+pane	Code	3	1	:*	1	artemis.local	:/Users/brian/Code/sc_mover	1	bash	:
+pane	Code	4	0	:	1	artemis.local	:/Users/brian/Documents	1	bash	:
+pane	Finance	1	1	:*	1	artemis.local	:/Users/brian/Finances	1	bash	:
+pane	Finance	2	0	:	1	artemis.local	:/Users/brian/Finances	1	bash	:
+pane	Finance	3	0	:-	1	artemis.local	:/Users/brian/Finances	1	bash	:
+pane	PennyFourierThoughts	1	1	:*	1	artemis.local	:/Users/brian/PennyFourierThoughts/How_To_Play_Videos_On_An_Oscilloscope	1	bash	:
+pane	PennyFourierThoughts	2	0	:-	1	artemis.local	:/Users/brian/Code/Video-to-Lissajous-Oscilloscope	1	bash	:
+pane	chess	1	0	:	1	artemis.local	:/Users/brian/Code/julia-chess	1	bash	:
+pane	chess	2	0	:-	1	artemis.local	:/Users/brian/Code/iccf/sygyzy/3-4-5	1	bash	:
+pane	chess	3	1	:*	1	artemis.local	:/Users/brian/Documents/chess-games/ICCF/WS_CCM/B_32	1	bash	:
+pane	chess	4	0	:	1	artemis.local	:/Users/brian/Pictures	1	bash	:
+pane	journal	1	1	:*	1	artemis.local	:/Users/brian	1	bash	:
+pane	misc	1	1	:*	1	artemis.local	:/Users/brian/Documents/health/hra_dispute_2024	1	bash	:
+pane	misc	2	0	:-	1	artemis.local	:/Users/brian/Downloads	1	bash	:
+pane	misc	3	0	:	1	artemis.local	:/Users/brian/Documents/Woodworking/logo	1	bash	:
+pane	misc	4	0	:	1	artemis.local	:/Users/brian/Code/Video-to-Lissajous-Oscilloscope	1	bash	:
+pane	misc	5	0	:	1	artemis.local	:/Users/brian/Documents/Documents	1	bash	:
+window	8	1	:bash	1	:*	de92,137x34,0,0,23	:
+window	Code	1	:bash	0	:	bcbe,137x34,0,0,1	on
+window	Code	2	:bash	0	:-	bcbf,137x34,0,0,2	on
+window	Code	3	:bash	1	:*	bcc0,137x34,0,0,3	on
+window	Code	4	:bash	0	:	de8f,137x34,0,0,20	:
+window	Finance	1	:bash	1	:*	de90,137x34,0,0,21	:
+window	Finance	2	:bash	0	:	bcc2,137x34,0,0,5	on
+window	Finance	3	:bash	0	:-	bcc3,137x34,0,0,6	on
+window	PennyFourierThoughts	1	:bash	1	:*	bcc4,137x34,0,0,7	:
+window	PennyFourierThoughts	2	:bash	0	:-	bcc5,137x34,0,0,8	:
+window	chess	1	:bash	0	:	bcc6,137x34,0,0,9	on
+window	chess	2	:bash	0	:-	5e8f,137x34,0,0,10	on
+window	chess	3	:bash	1	:*	5e90,137x34,0,0,11	on
+window	chess	4	:bash	0	:	5e91,137x34,0,0,12	:
+window	journal	1	:bash	1	:*	5e92,137x34,0,0,13	on
+window	misc	1	:bash	1	:*	5e93,137x34,0,0,14	on
+window	misc	2	:bash	0	:-	5e94,137x34,0,0,15	on
+window	misc	3	:bash	0	:	5e95,137x34,0,0,16	on
+window	misc	4	:bash	0	:	5e96,137x34,0,0,17	on
+window	misc	5	:bash	0	:	5e97,137x34,0,0,18	:
+state	Finance	misc
