@@ -3,12 +3,8 @@ if not status is-interactive
 end
 
 if status --is-login
-{{ if eq .chezmoi.os "darwin" -}}
-  eval (/opt/homebrew/bin/brew shellenv)
-{{ else if eq .chezmoi.os "linux" -}}
-  ~/.local/bin/mise activate fish | source
-{{- end }}
-  fastfetch
+    {{ if eq .chezmoi.os "darwin" }}eval (/opt/homebrew/bin/brew shellenv){{ else }}~/.local/bin/mise activate fish | source{{ end }}
+    fastfetch
 end
 
 set -g fish_greeting ''
