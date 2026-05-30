@@ -1,4 +1,4 @@
-{{ if eq .machineType "personal" -}}
+{{ if not .work -}}
 Include /Users/brian/.colima/ssh_config
 
 Host leary-web
@@ -68,7 +68,7 @@ Host boot-hermes
     Port 2231
     IdentityFile ~/.ssh/id_rsa
 {{ end -}}
-{{ if eq .machineType "work" -}}
+{{ if .work -}}
 # DevPod Start maize-eba.devpod
 Host maize-eba.devpod
   ForwardAgent yes

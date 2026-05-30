@@ -1,4 +1,4 @@
-{{- $machineType := promptStringOnce . "machineType" "Machine type (personal/work)" -}}
+{{- $work := promptBoolOnce . "work" "Is this a work machine?" -}}
 
 [data]
-    machineType = {{ $machineType | quote }}
+    work = {{ $work }}

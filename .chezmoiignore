@@ -1,0 +1,9 @@
+# Neovim - generated/state
+.config/nvim/lazy-lock.json
+.config/nvim/.luarc.json
+
+# Fish - runtime state and logs
+.config/fish/fish_variables
+.config/fish/fish_variables.*
+.config/fish/logs/
+.config/fish/themes/
