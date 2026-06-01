@@ -20,9 +20,8 @@ vim.opt.hlsearch = false
 vim.opt.mouse = "a"
 vim.opt.laststatus = 0
 vim.opt.guicursor = "n-v-i-c:block"
-vim.opt.termguicolors = false
 
-vim.cmd.colorscheme("peachpuff")
+vim.cmd.colorscheme("raven")
 
 -- Associate *.tex with tex filetype
 vim.filetype.add({ extension = { tex = "tex" } })
