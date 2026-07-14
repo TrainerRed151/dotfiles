@@ -1,0 +1,10 @@
+# Fish abbreviations
+# Sourced by config.fish
+
+abbr --add vim nvim
+abbr --add la ls -a
+
+{{ if .work -}}
+abbr ssh-eks sshuttle -r ai-jumpbox-ssm 10.150.0.0/16
+abbr aws-claude aws sso login --profile claude-bedrock
+{{- end }}

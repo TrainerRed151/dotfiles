@@ -1,11 +1,12 @@
 [tools]
 python = "3.14.6"
 chezmoi = "latest"
-claude-code = "latest"
 fastfetch = "latest"
 tmux = "latest"
 hledger = "latest"
+{{ if .work -}}
 aws-cli = { version = "latest", symlink_bins = "true" }
 kubectl = "latest"
 zizmor = "latest"
 direnv = "latest"
+{{- end }}

@@ -2,10 +2,7 @@ if not status is-interactive
     return
 end
 
-if status --is-login
-    {{ if eq .chezmoi.os "darwin" }}eval (/opt/homebrew/bin/brew shellenv){{ else }}~/.local/bin/mise activate fish | source{{ end }}
-    fastfetch
-end
+{{ if eq .chezmoi.os "darwin" }}eval (/opt/homebrew/bin/brew shellenv){{ else }}~/.local/bin/mise activate fish | source{{ end }}
 
 set -g fish_greeting ''
 
@@ -38,5 +35,8 @@ set -gx EDITOR nvim
 direnv hook fish | source
 {{- end }}
 
-abbr --add vim nvim
-abbr --add la ls -a
+# Abbreviations
+source ~/.config/fish/abbreviations.fish
+
+# System Information Fetcher
+fastfetch
