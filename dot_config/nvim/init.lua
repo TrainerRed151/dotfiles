@@ -21,6 +21,7 @@ vim.opt.mouse = "a"
 vim.opt.laststatus = 0
 vim.opt.guicursor = "n-v-i-c:block"
 vim.opt.termguicolors = true
+vim.opt.swapfile = false
 
 vim.cmd.colorscheme("raven")
 
