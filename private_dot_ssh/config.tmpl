@@ -71,13 +71,13 @@ Host boot-hermes
 {{ if .work -}}
 # DevPod Start maize-eba.devpod
 Host maize-eba.devpod
-  ForwardAgent yes
-  LogLevel error
-  StrictHostKeyChecking no
-  UserKnownHostsFile /dev/null
-  HostKeyAlgorithms rsa-sha2-256,rsa-sha2-512,ssh-rsa
-  ProxyCommand "/usr/local/bin/devpod" ssh --stdio --context default --user vscode maize-eba
-  User vscode
+    ForwardAgent yes
+    LogLevel error
+    StrictHostKeyChecking no
+    UserKnownHostsFile /dev/null
+    HostKeyAlgorithms rsa-sha2-256,rsa-sha2-512,ssh-rsa
+    ProxyCommand "/usr/local/bin/devpod" ssh --stdio --context default --user vscode maize-eba
+    User vscode
 # DevPod End maize-eba.devpod
 
 Host github.com
@@ -88,24 +88,41 @@ Host github.com
     IdentitiesOnly yes
 
 Host ai-jumpbox-proxy
-  HostName 3.14.63.94
-  User brian
-  IdentityFile ~/.ssh/id_rsa
+    HostName 3.14.63.94
+    User brian
+    IdentityFile ~/.ssh/id_rsa
 
 Host ai-jumpbox-proxy-prod
-  HostName 3.22.35.100
-  User brian
-  IdentityFile ~/.ssh/id_rsa
+    HostName 3.22.35.100
+    User brian
+    IdentityFile ~/.ssh/id_rsa
 
 Host ai-jumpbox-proxy-2
-  HostName 3.14.63.94
-  User brian
-  DynamicForward 1080  # -D 1080
-  SessionType none  # -N
-  LogLevel QUIET  # best guess at -q
-  IdentityFile ~/.ssh/id_rsa
+    HostName 3.14.63.94
+    User brian
+    DynamicForward 1080  # -D 1080
+    SessionType none  # -N
+    LogLevel QUIET  # best guess at -q
+    IdentityFile ~/.ssh/id_rsa
 
 Host camc
-    Hostname brian.pomerantz#i-bvmfdJLdHK9@pam.imprivata.com
+    Hostname pam.imprivata.com
+    User brian.pomerantz#i-bvmfdJLdHK9
     Port 2022
+
+Host northwell
+    Hostname pam.imprivata.com
+    User brian.pomerantz#i-2ipFtU1JfQy
+    Port 2022
+
+Host sinai
+    Hostname pam.imprivata.com
+    User brian.pomerantz#i-eBpmg9VRvKm
+    Port 2022
+
+Host ai-jumpbox-ssm
+    User ec2-user
+    IdentityFile ~/.ssh/eic_ephemeral
+    IdentitiesOnly yes
+    ProxyCommand sh -c 'INSTANCE_ID=$(aws ec2 describe-instances --region us-east-2 --filters "Name=tag:Name,Values=ai-nonprod-jumpbox-ssm" "Name=instance-state-name,Values=running" --query "Reservations[0].Instances[0].InstanceId" --output text) && aws ec2-instance-connect send-ssh-public-key --region us-east-2 --instance-id "$INSTANCE_ID" --instance-os-user ec2-user --ssh-public-key "file://$HOME/.ssh/eic_ephemeral.pub" --no-cli-pager >/dev/null && aws ssm start-session --target "$INSTANCE_ID" --document-name AWS-StartSSHSession --parameters portNumber=22'
 {{ end -}}
