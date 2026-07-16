@@ -67,6 +67,11 @@ Host boot-hermes
     User root
     Port 2231
     IdentityFile ~/.ssh/id_rsa
+
+Host thinkpad
+    Hostname 192.168.1.201
+    User brian
+    IdentityFile ~/.ssh/id_rsa
 {{ end -}}
 {{ if .work -}}
 # DevPod Start maize-eba.devpod
@@ -125,4 +130,19 @@ Host ai-jumpbox-ssm
     IdentityFile ~/.ssh/eic_ephemeral
     IdentitiesOnly yes
     ProxyCommand sh -c 'INSTANCE_ID=$(aws ec2 describe-instances --region us-east-2 --filters "Name=tag:Name,Values=ai-nonprod-jumpbox-ssm" "Name=instance-state-name,Values=running" --query "Reservations[0].Instances[0].InstanceId" --output text) && aws ec2-instance-connect send-ssh-public-key --region us-east-2 --instance-id "$INSTANCE_ID" --instance-os-user ec2-user --ssh-public-key "file://$HOME/.ssh/eic_ephemeral.pub" --no-cli-pager >/dev/null && aws ssm start-session --target "$INSTANCE_ID" --document-name AWS-StartSSHSession --parameters portNumber=22'
+
+Host thinkpad
+    Hostname 192.168.1.201
+    User brian
+    IdentityFile ~/.ssh/id_rsa
+
+Host leary-web
+    Hostname learypost.ddns.net
+    User brian
+    IdentityFile ~/.ssh/leary
+
+Host leary
+    Hostname 192.168.1.196
+    User brian
+    IdentityFile ~/.ssh/leary
 {{ end -}}
