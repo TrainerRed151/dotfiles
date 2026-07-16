@@ -10,13 +10,17 @@ set -g history-limit 50000
 # tmux messages are displayed for 4 seconds
 set -g display-time 2000
 
-# refresh 'status-left' and 'status-right' more often, and increase status-left length
+# refresh status more often, set status values and length
 set -g status-interval 5
 set -g status-left-length 30
+{{ if not .work -}}
+set -g status-right-length 50
+set -g status-right "\"#{=21:pane_title}\" %I:%M%p %d-%b-%y"
+{{- end }}
 {{ if .work -}}
 # add agent usage to status-right
 set -g status-right-length 120
-set -g status-right "#(agentsview usage statusline) #{?window_bigger,[#{window_offset_x},#{window_offset_y}] ,}\"#{=21:pane_title}\" %H:%M %d-%b-%y"
+set -g status-right "#(agentsview usage statusline) \"#{=21:pane_title}\" %I:%M%p %d-%b-%y"
 {{- end }}
 
 # upgrade $TERM
