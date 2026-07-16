@@ -13,6 +13,11 @@ set -g display-time 2000
 # refresh 'status-left' and 'status-right' more often, and increase status-left length
 set -g status-interval 5
 set -g status-left-length 30
+{{ if .work -}}
+# add agent usage to status-right
+set -g status-right-length 120
+set -g status-right "#(agentsview usage statusline) #{?window_bigger,[#{window_offset_x},#{window_offset_y}] ,}\"#{=21:pane_title}\" %H:%M %d-%b-%y"
+{{- end }}
 
 # upgrade $TERM
 set -g default-terminal "screen-256color"
