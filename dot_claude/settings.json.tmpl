@@ -1,0 +1,84 @@
+{{ if .work -}}
+{
+  "env": {
+    "CLAUDE_CODE_USE_BEDROCK": "1",
+    "AWS_REGION": "us-east-1",
+    "AWS_PROFILE": "claude-bedrock",
+    "ANTHROPIC_DEFAULT_SONNET_MODEL": "us.anthropic.claude-sonnet-4-6",
+    "ANTHROPIC_DEFAULT_OPUS_MODEL": "us.anthropic.claude-opus-4-8",
+    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "us.anthropic.claude-haiku-4-5-20251001-v1:0"
+  },
+  "permissions": {
+    "allow": [
+      "Read",
+      "Glob",
+      "Grep",
+      "WebFetch",
+      "WebSearch",
+      "Write",
+      "Edit",
+      "mcp__basic-memory__*",
+      "mcp__beads__*",
+      "mcp__plugin_context7_context7__*",
+      "mcp__plugin_cq_cq__*",
+      "Bash(chezmoi:*)",
+      "Bash(bd:*)",
+      "Bash(br:*)",
+      "Bash(git:*)",
+      "Bash(gh:*)",
+      "Bash(curl:*)",
+      "Bash(systemctl:*)",
+      "Bash(aws:*)",
+      "Bash(nono why *)",
+      "Bash(nono profile guide)",
+      "mcp__grafana__*",
+      "mcp__semble__*",
+      "Skill(*)"
+    ],
+    "deny": [
+      "Bash(rm -rf *)",
+      "Bash(rm -rf /)",
+      "Bash(rm -fr *)",
+      "Bash(rm -fr /)",
+      "Bash(sudo *)",
+      "Bash(mkfs *)",
+      "Bash(dd *)",
+      "Bash(wget *|bash*)",
+      "Bash(wget *| bash*)",
+      "Bash(git push --force*)",
+      "Bash(git push *--force*)",
+      "Bash(git reset --hard*)",
+      "Edit(~/.ssh/**)"
+    ],
+    "ask": [
+      "Edit(~/.bashrc)",
+      "Edit(~/.bash_profile)",
+      "Edit(~/.profile)",
+      "Edit(~/.zshrc)",
+      "Edit(~/.config/fish/config.fish)",
+      "Edit(~/.config/fish/conf.d/**)"
+    ]
+  },
+  "model": "sonnet",
+  "availableModels": [
+    "us.anthropic.claude-opus-4-7",
+    "us.anthropic.claude-opus-4-8",
+    "us.anthropic.claude-sonnet-4-6",
+    "us.anthropic.claude-sonnet-5",
+    "us.anthropic.claude-haiku-4-5-20251001-v1:0"
+  ],
+  "enabledPlugins": {
+    "ai@pydantic-skills": true
+  },
+  "extraKnownMarketplaces": {
+    "pydantic-skills": {
+      "source": {
+        "source": "github",
+        "repo": "pydantic/skills"
+      }
+    }
+  },
+  "effortLevel": "high",
+  "theme": "dark"
+}
+{{ end -}}
