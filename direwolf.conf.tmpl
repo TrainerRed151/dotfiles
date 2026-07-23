@@ -1,0 +1,25 @@
+{{- if eq .chezmoi.os "darwin" }}
+ADEVICE "USB Audio Device" "USB Audio Device"
+{{ else }}
+ADEVICE pl
+{{- end }}
+ACHANNELS 1
+
+#MODEM 1200 1200:2200
+MODEM 1200
+MYCALL KD8ORX-1
+
+TXDELAY 30
+TXTAIL 10
+
+{{- if eq .chezmoi.os "darwin" }}
+PTT /dev/cu.usbserial-1110 RTS
+{{ else }}
+PTT /dev/tty.usbserial-1110 RTS
+{{- end }}
+
+#PBEACON delay=0 every=10 symbol=/# lat=39.891341 long=-104.785623 comment="APRS via Dire Wolf" via=WIDE1-1,WIDE2-1 dest=APDW16
+PBEACON delay=0 every=10 symbol=/# lat=39.891341 long=-104.785623 comment="APRS via Dire Wolf" dest=APDW16
+
+# Digipeater
+DIGIPEAT 0 0 ^WIDE[3-7]-[1-7]$ ^WIDE[12]-[12]$ TRACE
