@@ -1,8 +1,8 @@
-{{- if eq .chezmoi.os "darwin" }}
+{{- if eq .chezmoi.os "darwin" -}}
 ADEVICE "USB Audio Device" "USB Audio Device"
 {{ else }}
-ADEVICE pl
-{{- end }}
+ADEVICE plughw:1,0
+{{- end -}}
 ACHANNELS 1
 
 #MODEM 1200 1200:2200
