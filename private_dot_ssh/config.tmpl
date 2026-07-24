@@ -68,7 +68,7 @@ Host boot-hermes
     Port 2231
     IdentityFile ~/.ssh/id_rsa
 
-Host thinkpad
+Host thinkstation
     Hostname 192.168.1.201
     User brian
     IdentityFile ~/.ssh/id_rsa
@@ -131,7 +131,7 @@ Host ai-jumpbox-ssm
     IdentitiesOnly yes
     ProxyCommand sh -c 'INSTANCE_ID=$(aws ec2 describe-instances --region us-east-2 --filters "Name=tag:Name,Values=ai-nonprod-jumpbox-ssm" "Name=instance-state-name,Values=running" --query "Reservations[0].Instances[0].InstanceId" --output text) && aws ec2-instance-connect send-ssh-public-key --region us-east-2 --instance-id "$INSTANCE_ID" --instance-os-user ec2-user --ssh-public-key "file://$HOME/.ssh/eic_ephemeral.pub" --no-cli-pager >/dev/null && aws ssm start-session --target "$INSTANCE_ID" --document-name AWS-StartSSHSession --parameters portNumber=22'
 
-Host thinkpad
+Host thinkstation
     Hostname 192.168.1.201
     User brian
     IdentityFile ~/.ssh/id_rsa
