@@ -99,6 +99,13 @@
     pass
     gnupg
 
+    # Ham radio
+    direwolf
+    pat
+
+    # Audio
+    sox
+
     # Utilities
     curl
     wget

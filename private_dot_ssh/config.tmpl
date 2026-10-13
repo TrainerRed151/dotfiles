@@ -1,5 +1,9 @@
-{{ if not .work -}}
+{{ if eq .chezmoi.os "darwin" -}}
 Include /Users/brian/.colima/ssh_config
+
+{{ end -}}
+{{ if not .work -}}
+Include ~/.ssh/config.local
 
 Host leary-web
     Hostname learypost.ddns.net
