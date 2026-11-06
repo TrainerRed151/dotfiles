@@ -82,7 +82,12 @@ clock() {
   date '+%a %Y-%m-%d %X'
 }
 
+# SIGUSR1 interrupts the sleep so the bar redraws immediately
+# (e.g. `pkill -USR1 -f '^bash .*/sway/status.sh$'` from the volume keybindings).
+trap ':' USR1
+
 while true; do
   printf "%s | %s | %s%s | %s\n" "$(volume)" "$(battery)" "$(network)" "$(vpn)" "$(clock)"
-  sleep 1
+  sleep 1 &
+  wait $!
 done

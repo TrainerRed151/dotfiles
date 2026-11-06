@@ -79,9 +79,9 @@ output eDP-1 scale 1.2
     bindsym $mod+Shift+c reload
 
     # Volume controls
-    bindsym XF86AudioRaiseVolume exec pamixer -i 5
-    bindsym XF86AudioLowerVolume exec pamixer -d 5
-    bindsym XF86AudioMute exec pamixer -t
+    bindsym XF86AudioRaiseVolume exec "pamixer -i 5 && pkill -USR1 -f '^bash .*/sway/status.sh$'"
+    bindsym XF86AudioLowerVolume exec "pamixer -d 5 && pkill -USR1 -f '^bash .*/sway/status.sh$'"
+    bindsym XF86AudioMute exec "pamixer -t && pkill -USR1 -f '^bash .*/sway/status.sh$'"
 
     # Brightness controls
     bindsym XF86MonBrightnessUp exec brightnessctl set 10%+
